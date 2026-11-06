@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-06",
+  "assets": [
+    {
+      "file": "docs/assets/screenshots/01-workspace.png",
+      "original_recording_still": "01-opening.png",
+      "sha256": "ad3f5637a5fdf21a57c3300a52b216199fb28591e836aec7a2f48f93ebe5261f",
+      "transformation": "none",
+      "evidence_class": "fictional stored-output/simulated-payment desktop demonstration"
+    },
+    {
+      "file": "docs/assets/screenshots/02-sources.png",
+      "original_recording_still": "02-source-conflict.png",
+      "sha256": "90d171f32c5137481aaedf923c6a2677c52866e10e1d6f7f62e69c3784f5f4b2",
+      "transformation": "none",
+      "evidence_class": "fictional stored-output/simulated-payment desktop demonstration"
+    },
+    {
+      "file": "docs/assets/screenshots/03-owner-review.png",
+      "original_recording_still": "03-exclusion.png",
+      "sha256": "5d7f5fcbbc9d99aa237ce7c7617aca44c1947a6cd70737210f828ee8c4d0f13b",
+      "transformation": "none",
+      "evidence_class": "fictional stored-output/simulated-payment desktop demonstration"
+    },
+    {
+      "file": "docs/assets/screenshots/04-simulated-receipt.png",
+      "original_recording_still": "04-receipt.png",
+      "sha256": "92084756f8b52eb7199a79c9b942df355f101f1c624358fe9f0724e4f0294382",
+      "transformation": "none",
+      "evidence_class": "fictional stored-output/simulated-payment desktop demonstration"
+    },
+    {
+      "file": "public/brand/refundbrief-return-r.png",
+      "sha256": "226bc0864ff5f17c459e0b31cfdd63dd5a2719373709ccb3b6594ac0d8c94694",
+      "transformation": "none",
+      "evidence_class": "approved brand asset"
+    },
+    {
+      "file": "docs/assets/badges/judge.svg",
+      "sha256": "c1a23006097ebc59fcb11e0d865f933519d781e9cb35aeea34f013ab3712a78e",
+      "origin": "code-authored presentation graphic",
+      "evidence_class": "illustration/scope label; not application behaviour or CI evidence"
+    },
+    {
+      "file": "docs/assets/badges/license.svg",
+      "sha256": "d04e588c9903c39e362fede903dfbc9a254f755583a92dd8a89a45cc9cde4d1f",
+      "origin": "code-authored presentation graphic",
+      "evidence_class": "illustration/scope label; not application behaviour or CI evidence"
+    },
+    {
+      "file": "docs/assets/badges/sandbox.svg",
+      "sha256": "2d9a18fe435f00a863936776a3e83cfff5c42eb5f3b5ef519c94852ac0474c37",
+      "origin": "code-authored presentation graphic",
+      "evidence_class": "illustration/scope label; not application behaviour or CI evidence"
+    },
+    {
+      "file": "docs/assets/readme-hero.svg",
+      "sha256": "6195b97019c00711d5ba57a52b98513aa86763dab8ffafac2d12ec83a503f2e4",
+      "origin": "code-authored presentation graphic",
+      "evidence_class": "illustration/scope label; not application behaviour or CI evidence"
+    },
+    {
+      "file": "docs/assets/refundbrief-logo-plate.png",
+      "sha256": "6d51b93a2f12f99855706542eef8476211986be4f5e26db3348822dff844a526",
+      "source": "public/brand/refundbrief-return-r.png",
+      "transformation": "exact foreground composited on white; 60 px padding",
+      "evidence_class": "approved brand asset formatted for dark/light themes"
+    }
+  ]
+}
