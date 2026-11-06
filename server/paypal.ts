@@ -173,6 +173,11 @@ export class PayPalClient {
     if (res.status === 404) throw new PayPalError("Refund not found.", "PAYPAL_REFUND_NOT_FOUND", { httpStatus: 404 });
     if (!res.ok) throw new PayPalError("Failed to read refund.", "PAYPAL_REFUND_READ", { httpStatus: res.status });
     const json = (await res.json()) as any;
-    return { id: String(json?.id ?? refundId), status: String(json?.status ?? "UNKNOWN"), amountPennies: pennies(json?.amount) };
+    // Do not let an unrelated or unidentified response release an operation's
+    // pending/unknown block. Response identity is an application postcondition.
+    if (typeof json?.id !== "string" || !json.id || json.id !== refundId) {
+      throw new PayPalError("Refund lookup response identity could not be verified.", "PAYPAL_REFUND_IDENTITY");
+    }
+    return { id: json.id, status: String(json?.status ?? "UNKNOWN"), amountPennies: pennies(json?.amount) };
   }
 }

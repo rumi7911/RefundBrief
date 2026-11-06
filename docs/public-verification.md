@@ -12,3 +12,10 @@ Release candidate prepared locally4–5 November2026. This document contains no 
 - Human 16-row semantic annotations:UNMEASURED.24-attempt representative pilot:NOT_RUN. Agent fixture reviews are provisional QA judgements only. No accuracy/time/benefit/production/security/accessibility-superiority claim. Focused axe/keyboard/reflow checks do not establish whole-app WCAG conformance or screen-reader speech comprehension.
 
 Review contract 2 records owner conclusions with a cited basis, not verified truth. A selected passage does not prove every part of a conclusion. Not material means owner exclusion. Missing version metadata means historical contract 1; original rows/snapshot hashes are preserved. Application immutability and basis hashes do not resist a machine administrator.
+
+
+## Native refund-lookup hardening — 6 November 2026
+
+The local 1.0.1 candidate requires a non-empty string refund response ID exactly matching the requested refund ID before reconciliation can change operation state. Missing, malformed or mismatched identity returns an error through the existing route; the recorded pending/unknown operation and its stable request key remain unchanged. Matching identities retain the existing status mapping.
+
+Fake-transport adapter tests and actual route/SQLite regressions cover identity rejection, continued blocking of a separate confirmation, matching statuses and lookup HTTP errors. The new tests were observed failing against the old code before the guard was added. No provider mismatch or historical cause is inferred. No real model call or refund was used for this correction. Historical evidence and published 1.0.0 assets remain unchanged. Local candidate verification does not by itself publish or replace the public release, and is not general connected-path security assurance.

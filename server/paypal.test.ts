@@ -50,4 +50,27 @@ describe("PayPalClient", () => {
     }));
     await expect(client.refundCapture({ captureId: "CAP", requestId: "x", amountValue: "1.00" })).rejects.toMatchObject({ ambiguous: true });
   });
+
+  it.each([
+    ["missing", undefined], ["null", null], ["empty", ""], ["number", 42],
+    ["object", {}], ["array", []], ["mismatched", "OTHER-REFUND"],
+  ])(
+    "rejects %s refund lookup identity without substituting or coercing it",
+    async (_label, responseId) => {
+      const client = new PayPalClient(cfg, fake((url) => {
+        if (url.endsWith("/oauth2/token")) return json({ access_token: "T", expires_in: 3000 });
+        expect(url).toBe("https://api-m.sandbox.paypal.com/v2/payments/refunds/EXPECTED-REFUND");
+        return json({ id: responseId, status: "FAILED", amount: { value: "1.00", currency_code: "GBP" } });
+      }));
+      await expect(client.getRefund("EXPECTED-REFUND")).rejects.toMatchObject({ code: "PAYPAL_REFUND_IDENTITY" });
+    },
+  );
+
+  it("returns matching refund identity and status without changing their meaning", async () => {
+    const client = new PayPalClient(cfg, fake((url) => {
+      if (url.endsWith("/oauth2/token")) return json({ access_token: "T", expires_in: 3000 });
+      return json({ id: "EXPECTED-REFUND", status: "PENDING", amount: { value: "1.00", currency_code: "GBP" } });
+    }));
+    await expect(client.getRefund("EXPECTED-REFUND")).resolves.toEqual({ id: "EXPECTED-REFUND", status: "PENDING", amountPennies: 100 });
+  });
 });
