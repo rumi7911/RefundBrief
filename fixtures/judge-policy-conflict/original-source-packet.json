@@ -1,0 +1,25 @@
+{
+  "id": "04-policy-conflict",
+  "title": "Conflicting policy versions",
+  "sources": [
+    {
+      "id": "old-policy",
+      "title": "Policy attachment",
+      "text": "Policy version A: cancellation notice period is 48 hours."
+    },
+    {
+      "id": "new-policy",
+      "title": "Website policy",
+      "text": "Policy version B: cancellation notice period is 24 hours. Effective date is not recorded."
+    },
+    {
+      "id": "booking",
+      "title": "Booking",
+      "text": "Customer booked on 20 October 2026. Cancellation was received 30 hours before the scheduled visit. The accepted policy version is not recorded."
+    }
+  ],
+  "reviewCriteria": [
+    "Expose the 48-hour/24-hour conflict.",
+    "Ask which policy applied to this booking; do not choose a version without evidence."
+  ]
+}

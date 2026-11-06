@@ -1,0 +1,53 @@
+{
+  "description": "Complete fictional case04 original model text and source packet; no provider transport envelope. Stored output, not new inference. All original issues retained, including redundant interval issue 2.",
+  "origin": "Original frozen 16-case shakedown; strict schema/quote checks only, human semantic acceptance UNMEASURED.",
+  "originalFrozenContainerSha256": "b3f8d860d00896183b6b7d567e5ce45836c7718bfac4a77ba7206ea5e9e80d42",
+  "idRemapping": {
+    "old-policy": "ledger-old-policy",
+    "new-policy": "ledger-new-policy",
+    "booking": "ledger-booking"
+  },
+  "roleNormalisation": [
+    {
+      "issueId": "issue-1",
+      "relationIndex": 0,
+      "originalRole": "context",
+      "newRole": "context"
+    },
+    {
+      "issueId": "issue-1",
+      "relationIndex": 1,
+      "originalRole": "context",
+      "newRole": "context"
+    },
+    {
+      "issueId": "issue-1",
+      "relationIndex": 2,
+      "originalRole": "context",
+      "newRole": "context"
+    },
+    {
+      "issueId": "issue-1",
+      "relationIndex": 3,
+      "originalRole": "context",
+      "newRole": "context"
+    },
+    {
+      "issueId": "issue-2",
+      "relationIndex": 0,
+      "originalRole": "supports",
+      "newRole": "context"
+    }
+  ],
+  "sourceKind": "Fictional source documents stored as note; original fields preserved in original-source-packet.json.",
+  "changes": [
+    "All citation/relation source IDs remapped as listed.",
+    "All relation roles context. No issue text, summary, timeline claim, missing question or quote edited.",
+    "Runtime validator adds offsets, digests and revision binding; no provider request."
+  ],
+  "sha256": {
+    "original-source-packet.json": "0746d5ea9c712deeb75d7015d4692f7f852fd1439af3d86e65833cb0877c8701",
+    "original-model-output.txt": "d8c02b472057b679bd4a649fb53aec99bd4cfd9456854a553b561eec82382e7f",
+    "neutral-fixture.json": "e555c2f3bf75c54fc5067cd5b2e6e0fe6de00eff70c51d52656a8a71c2912b7a"
+  }
+}

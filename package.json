@@ -1,0 +1,44 @@
+{
+  "name": "refundbrief",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Evidence-review to owner-approved PayPal sandbox refund workflow.",
+  "license": "MIT",
+  "engines": {
+    "node": "^22.13.0 || >=24.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently -n server,web -c green,cyan \"npm:dev:server\" \"npm:dev:web\"",
+    "dev:server": "tsx watch server/index.ts",
+    "dev:web": "vite",
+    "build": "npm run typecheck && vite build",
+    "start": "cross-env NODE_ENV=production tsx server/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "demo": "tsx scripts/ledger-review-workspace.ts"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "jose": "^6.2.14",
+    "lucide-react": "^0.456.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/react-test-renderer": "^18.3.1",
+    "@vitejs/plugin-react": "^5.2.0",
+    "axe-core": "^4.14.0",
+    "concurrently": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "react-test-renderer": "^18.3.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vite": "^7.3.7",
+    "vitest": "^5.0.5"
+  }
+}
